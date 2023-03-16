@@ -3,7 +3,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "typescript": "tsc --noEmit",
+    "prettier": "prettier --write './**/*.ts'"
   },
   "dependencies": {
     "date-fns": "^2.29.3",
@@ -17,6 +20,11 @@
   "devDependencies": {
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
+    "eslint-config-next": "13.2.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-config-prettier": "^8.7.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "prettier": "^2.8.4",
     "typescript": "^4.8.4"
   }
 }
