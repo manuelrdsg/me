@@ -20,6 +20,9 @@
 .env*
 .idea/
 
+# ts
+tsconfig.tsbuildinfo
+
 # debug
 npm-debug.log*
 yarn-debug.log*
