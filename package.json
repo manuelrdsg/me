@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typescript": "tsc --noEmit",
+    "type-check": "tsc --noEmit",
     "prettier": "prettier --write './**/*.ts'"
   },
   "dependencies": {
