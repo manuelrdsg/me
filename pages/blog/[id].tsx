@@ -31,18 +31,12 @@ const Post = ({
             <div className={'text-secondary-text dark:text-dark-secondary-text'}>{postData.subtitle}</div>
           )}
           <div className={'flex flex-row space-x-4'}>
-            <div
-              className={
-                'flex flex-row space-x-1 text-secondary-text text-xs dark:text-dark-secondaty-text items-center'
-              }>
+            <div className={'flex flex-row space-x-1 text-secondary-text dark:text-dark-secondaty-text items-center'}>
               <ClockIcon className={'h-4 w-4'} />
               <Date dateString={postData.date} />
             </div>
             {!!postData.location && (
-              <div
-                className={
-                  'flex flex-row space-x-1 text-secondary-text text-xs dark:text-dark-secondaty-text items-center'
-                }>
+              <div className={'flex flex-row space-x-1 text-secondary-text dark:text-dark-secondaty-text items-center'}>
                 <MapIcon className={'h-4 w-4'} />
                 <div>{postData.location}</div>
               </div>
