@@ -9,8 +9,6 @@ import Layout from 'components/Layout'
 
 import { getAllPostIds, getPostData } from 'lib/posts'
 
-import utilStyles from 'styles/utils.module.css'
-
 const Post = ({
   postData,
 }: {
