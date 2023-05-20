@@ -1,11 +1,11 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { darcula, vs } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 // @ts-ignore
 export const CodeBlock = ({ node, inline, className, children, ...props }): any => {
   const match = /language-(\w+)/.exec(className || '')
   return !inline && match ? (
-    <SyntaxHighlighter style={darcula} language={match[1]} PreTag="div" {...props}>
+    <SyntaxHighlighter style={nord} language={match[1]} PreTag="div" {...props}>
       {String(children).replace(/\n$/, '')}
     </SyntaxHighlighter>
   ) : (
