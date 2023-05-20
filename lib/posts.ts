@@ -1,5 +1,6 @@
 import fs from 'fs'
 import matter from 'gray-matter'
+import { Post, PostMetadata } from 'models/PostModel'
 import path from 'path'
 
 const postsDirectory = path.join(process.cwd(), 'content/blog')
@@ -45,7 +46,7 @@ export function getAllPostIds() {
   })
 }
 
-export async function getPostData(id: string) {
+export async function getPostData(id: string): Promise<Post> {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
@@ -55,7 +56,7 @@ export async function getPostData(id: string) {
   // Combine the data with the id and contentHtml
   return {
     id,
-    markdownBody: matterResult.content,
-    ...(matterResult.data as { date: string; title: string; subtitle: string; location: string }),
+    body: matterResult.content,
+    metadata: matterResult.data as PostMetadata,
   }
 }

@@ -6,7 +6,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "prettier": "prettier --write './**/*.ts'"
+    "prettier": "prettier './**/*.ts' --write"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",

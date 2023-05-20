@@ -1,4 +1,5 @@
 import { ClockIcon, MapIcon } from '@heroicons/react/24/outline'
+import {Post} from "models/PostModel"
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
@@ -9,54 +10,42 @@ import Layout from 'components/Layout'
 
 import { getAllPostIds, getPostData } from 'lib/posts'
 
-const Post = ({
-  postData,
-}: {
-  postData: {
-    title: string
-    subtitle: string
-    location: string
-    date: string
-    markdownBody: string
-  }
-}) => {
-  return (
+const Post = ({postData}: { postData: Post }) => (
     <Layout>
       <article className={'flex flex-col gap-8 md:gap-10 h-entry justify-center'}>
         <header className={'stack flex [&_>_*]:m-0 stack--column flex-col space-y-4 border-b border-secondary pb-4'}>
           <h1 className={'font-bold text-3xl md:text-5xl text-heading-text dark:text-dark-heading-text'}>
-            {postData.title}
+            {postData.metadata.title}
           </h1>
-          {!!postData.subtitle && (
-            <div className={'text-secondary-text dark:text-dark-secondary-text'}>{postData.subtitle}</div>
+          {!!postData.metadata.subtitle && (
+            <div className={'text-secondary-text dark:text-dark-secondary-text'}>{postData.metadata.subtitle}</div>
           )}
           <div className={'flex flex-row space-x-4'}>
             <div className={'flex flex-row space-x-1 text-secondary-text dark:text-dark-secondaty-text items-center'}>
               <ClockIcon className={'h-4 w-4'} />
-              <Date dateString={postData.date} />
+              <Date dateString={postData.metadata.date} />
             </div>
-            {!!postData.location && (
+            {!!postData.metadata.location && (
               <div className={'flex flex-row space-x-1 text-secondary-text dark:text-dark-secondaty-text items-center'}>
                 <MapIcon className={'h-4 w-4'} />
-                <div>{postData.location}</div>
+                <div>{postData.metadata.location}</div>
               </div>
             )}
           </div>
         </header>
         <ReactMarkdown
           components={{
-            // @ts-ignore
             code: CodeBlock,
             // @ts-ignore
             image: Image,
           }}
           className={'prose dark:prose-invert'}>
-          {postData.markdownBody}
+          {postData.body}
         </ReactMarkdown>
       </article>
     </Layout>
   )
-}
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds()
