@@ -56,6 +56,6 @@ export async function getPostData(id: string) {
   return {
     id,
     markdownBody: matterResult.content,
-    ...(matterResult.data as { date: string; title: string }),
+    ...(matterResult.data as { date: string; title: string; subtitle: string; location: string }),
   }
 }
