@@ -1,37 +1,51 @@
+import { ClockIcon, MapIcon } from '@heroicons/react/24/outline'
+import {Post} from "models/PostModel"
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Head from 'next/head'
+import Image from 'next/image'
+import ReactMarkdown from 'react-markdown'
 
+import CodeBlock from 'components/CodeBlock'
+import Date from 'components/Date'
 import Layout from 'components/Layout'
-import Date from 'components/date'
 
 import { getAllPostIds, getPostData } from 'lib/posts'
 
-import utilStyles from 'styles/utils.module.css'
-
-const Post = ({
-  postData,
-}: {
-  postData: {
-    title: string
-    date: string
-    contentHtml: string
-  }
-}) => {
-  return (
+const Post = ({postData}: { postData: Post }) => (
     <Layout>
-      <Head>
-        <title>{postData.title}</title>
-      </Head>
-      <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <article className={'flex flex-col gap-8 md:gap-10 h-entry justify-center'}>
+        <header className={'stack flex [&_>_*]:m-0 stack--column flex-col space-y-4 border-b border-secondary pb-4'}>
+          <h1 className={'font-bold text-3xl md:text-5xl text-heading-text dark:text-dark-heading-text'}>
+            {postData.metadata.title}
+          </h1>
+          {!!postData.metadata.subtitle && (
+            <div className={'text-secondary-text dark:text-dark-secondary-text'}>{postData.metadata.subtitle}</div>
+          )}
+          <div className={'flex flex-row space-x-4'}>
+            <div className={'flex flex-row space-x-1 text-secondary-text dark:text-dark-secondaty-text items-center'}>
+              <ClockIcon className={'h-4 w-4'} />
+              <Date dateString={postData.metadata.date} />
+            </div>
+            {!!postData.metadata.location && (
+              <div className={'flex flex-row space-x-1 text-secondary-text dark:text-dark-secondaty-text items-center'}>
+                <MapIcon className={'h-4 w-4'} />
+                <div>{postData.metadata.location}</div>
+              </div>
+            )}
+          </div>
+        </header>
+        <ReactMarkdown
+          components={{
+            code: CodeBlock,
+            // @ts-ignore
+            image: Image,
+          }}
+          className={'prose dark:prose-invert'}>
+          {postData.body}
+        </ReactMarkdown>
       </article>
     </Layout>
   )
-}
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds()
@@ -43,6 +57,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postData = await getPostData(params?.id as string)
+
   return {
     props: {
       postData,
