@@ -1,38 +1,32 @@
+import { Post } from 'models/PostModel'
 import { GetStaticProps } from 'next'
-import Link from 'next/link'
 
 import Date from 'components/Date'
 import Layout from 'components/Layout'
+import Link from 'components/Link'
 
 import { getSortedPostsData } from 'lib/posts'
 
-import utilStyles from 'styles/utils.module.css'
-
-const Blog = ({
-  allPostsData,
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
-}) => {
+const Blog = ({ allPostsData }: { allPostsData: Post[] }) => {
   return (
     <Layout home>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/blog/${id}`}>{title}</Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <div className={'mb-8'}>
+        <h2 className={'font-bold text-3xl md:text-5xl text-heading-text dark:text-dark-heading-text'}>Blog</h2>
+        <p className={'text-sm text-secondary-text dark:text-dark-secondary-text'}>{`${allPostsData.length} posts`}</p>
+      </div>
+      <ul>
+        {allPostsData.map(({ id, metadata }) => (
+          <li className={'flex flex-col mb-6 gap-1'} key={id}>
+            <Link className={'font-bold text-xl'} href={`/blog/${id}`}>
+              {metadata.title}
+            </Link>
+            <div className={'flex flex-col gap-1.5'}>
+              <p className={'text-md text-secondary-text dark:text-dark-secondary-text'}>{metadata.subtitle}</p>
+              <Date className={'text-sm'} dateString={metadata.date} />
+            </div>
+          </li>
+        ))}
+      </ul>
     </Layout>
   )
 }
