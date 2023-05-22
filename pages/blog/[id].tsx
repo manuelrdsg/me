@@ -1,4 +1,4 @@
-import { ClockIcon, MapIcon } from '@heroicons/react/24/outline'
+import { MapIcon } from '@heroicons/react/24/outline'
 import {Post} from "models/PostModel"
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
