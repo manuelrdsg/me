@@ -22,12 +22,12 @@ export function getSortedPostsData() {
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { date: string; title: string }),
+      metadata: matterResult.data as PostMetadata,
     }
   })
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+  return allPostsData.sort((articleA, articleB) => {
+    if (articleA.metadata.date < articleB.metadata.date) {
       return 1
     } else {
       return -1
