@@ -1,4 +1,4 @@
-import { ClockIcon, MapIcon } from '@heroicons/react/24/outline'
+import { MapIcon } from '@heroicons/react/24/outline'
 import {Post} from "models/PostModel"
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
@@ -21,10 +21,7 @@ const Post = ({postData}: { postData: Post }) => (
             <div className={'text-secondary-text dark:text-dark-secondary-text'}>{postData.metadata.subtitle}</div>
           )}
           <div className={'flex flex-row space-x-4'}>
-            <div className={'flex flex-row space-x-1 text-secondary-text dark:text-dark-secondaty-text items-center'}>
-              <ClockIcon className={'h-4 w-4'} />
-              <Date dateString={postData.metadata.date} />
-            </div>
+            <Date dateString={postData.metadata.date} />
             {!!postData.metadata.location && (
               <div className={'flex flex-row space-x-1 text-secondary-text dark:text-dark-secondaty-text items-center'}>
                 <MapIcon className={'h-4 w-4'} />
