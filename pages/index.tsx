@@ -1,3 +1,4 @@
+import { Post } from 'models/PostModel'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -11,15 +12,7 @@ import utilStyles from 'styles/utils.module.css'
 
 import { siteTitle } from 'utils/strings'
 
-const Home = ({
-  allPostsData,
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
-}) => {
+const Home = ({ allPostsData }: { allPostsData: Post[] }) => {
   return (
     <Layout home>
       <Head>
@@ -37,12 +30,12 @@ const Home = ({
           Blog
         </a>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, metadata }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href={`/blog/${id}`}>{title}</Link>
+              <Link href={`/blog/${id}`}>{metadata.title}</Link>
               <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={date} />
+                <Date dateString={metadata.date} />
               </small>
             </li>
           ))}
