@@ -12,7 +12,7 @@ export const Link = ({
 }) => (
   <NextLink
     href={href}
-    className={`flex w-auto flex-grow-0 text-primary underline underline-offset-2 decoration-1 ${className}`}>
+    className={`flex w-auto flex-grow-0 text-primary dark:text-dark-primary underline underline-offset-2 decoration-1 ${className}`}>
     {children}
   </NextLink>
 )

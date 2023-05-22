@@ -5,7 +5,7 @@ import { siteTitle } from 'utils/strings'
 import Footer from './components/Footer'
 
 export const Layout = ({ children }: { children: React.ReactNode }) => (
-  <div>
+  <div className={'dark:bg-dark-bg'}>
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <meta name="description" content="Learn how to build a personal website using Next.js" />

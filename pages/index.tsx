@@ -14,7 +14,7 @@ import { siteTitle } from 'utils/strings'
 
 const Home = ({ allPostsData }: { allPostsData: Post[] }) => {
   return (
-    <Layout home>
+    <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
