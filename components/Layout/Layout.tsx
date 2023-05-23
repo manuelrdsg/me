@@ -1,17 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-
-import utilStyles from 'styles/utils.module.css'
 
 import { siteTitle } from 'utils/strings'
 
-import styles from './layout.module.css'
+import Footer from './components/Footer'
 
-const name = '[Your Name]'
-
-export const Layout = ({ children, home }: { children: React.ReactNode; home?: boolean }) => (
-  <div className={styles.container}>
+export const Layout = ({ children }: { children: React.ReactNode }) => (
+  <div className={'dark:bg-dark-bg'}>
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <meta name="description" content="Learn how to build a personal website using Next.js" />
@@ -24,44 +18,7 @@ export const Layout = ({ children, home }: { children: React.ReactNode; home?: b
       <meta name="og:title" content={siteTitle} />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
-    <header className={styles.header}>
-      {home ? (
-        <>
-          <Image
-            priority
-            src="/images/profile.jpg"
-            className={utilStyles.borderCircle}
-            height={144}
-            width={144}
-            alt={name}
-          />
-          <h1 className={utilStyles.heading2Xl}>{name}</h1>
-        </>
-      ) : (
-        <>
-          <Link href="/">
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={108}
-              width={108}
-              alt={name}
-            />
-          </Link>
-          <h2 className={utilStyles.headingLg}>
-            <Link href="/" className={utilStyles.colorInherit}>
-              {name}
-            </Link>
-          </h2>
-        </>
-      )}
-    </header>
-    <main>{children}</main>
-    {!home && (
-      <div className={styles.backToHome}>
-        <Link href="/">← Back to home</Link>
-      </div>
-    )}
+    <main className={'max-w-xl mt-12 mx-auto mb-24 py-0 px-4'}>{children}</main>
+    <Footer />
   </div>
 )

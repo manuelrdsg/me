@@ -14,7 +14,7 @@ const Post = ({postData}: { postData: Post }) => (
     <Layout>
       <article className={'flex flex-col gap-8 md:gap-10 h-entry justify-center'}>
         <header className={'stack flex [&_>_*]:m-0 stack--column flex-col space-y-4 border-b border-secondary pb-4'}>
-          <h1 className={'font-bold text-3xl md:text-5xl text-heading-text dark:text-dark-heading-text'}>
+          <h1 className={'font-bold text-3xl md:text-5xl text-heading-text dark:text-dark-primary'}>
             {postData.metadata.title}
           </h1>
           {!!postData.metadata.subtitle && (

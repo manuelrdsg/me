@@ -9,10 +9,10 @@ import { getSortedPostsData } from 'lib/posts'
 
 const Blog = ({ allPostsData }: { allPostsData: Post[] }) => {
   return (
-    <Layout home>
+    <Layout>
       <div className={'mb-8'}>
-        <h2 className={'font-bold text-3xl md:text-5xl text-heading-text dark:text-dark-heading-text'}>Blog</h2>
-        <p className={'text-sm text-secondary-text dark:text-dark-secondary-text'}>{`${allPostsData.length} posts`}</p>
+        <h2 className={'font-bold text-3xl md:text-5xl text-heading-text dark:text-dark-primary'}>Blog</h2>
+        <p className={'text-sm text-secondary-text dark:text-dark-primary'}>{`${allPostsData.length} posts`}</p>
       </div>
       <ul>
         {allPostsData.map(({ id, metadata }) => (
