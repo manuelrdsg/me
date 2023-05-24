@@ -3,9 +3,10 @@ import Head from 'next/head'
 import { siteTitle } from 'utils/strings'
 
 import Footer from './components/Footer'
+import Header from './components/Header'
 
 export const Layout = ({ children }: { children: React.ReactNode }) => (
-  <div className={'dark:bg-dark-bg'}>
+  <div className={'flex flex-1 flex-col dark:bg-dark-bg min-h-full items-stretch flex-nowrap'}>
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <meta name="description" content="Learn how to build a personal website using Next.js" />
@@ -18,7 +19,8 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
       <meta name="og:title" content={siteTitle} />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
-    <main className={'max-w-xl mt-12 mx-auto mb-24 py-0 px-4'}>{children}</main>
+    <Header />
+    <main className={'flex flex-col flex-1 min-h-full max-w-xl mt-12 mx-auto mb-24 py-0 px-6'}>{children}</main>
     <Footer />
   </div>
 )
