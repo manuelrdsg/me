@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply dark:bg-dark-bg;
+}
+
+#__next, body {
+  @apply flex flex-1 flex-col;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

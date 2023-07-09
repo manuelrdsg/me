@@ -1,24 +1,32 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: ['./app/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/**/*'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: () => ({
+        'dark-grain-texture': "url('/textures/less_noise2.png')",
+        'light-grain-texture': "url('/textures/light_noise.png')",
+      }),
+      screens: {
+        xs: '320px',
+      },
+    },
     colors: {
       transparent: 'transparent',
       // Light mode
       primary: '#2D2D2D',
       secondary: '#4F4F4F',
-      'accent-1': '#FF7A59',
-      'accent-2': '#007AFF',
       'heading-text': '#2D2D2D',
-      'secondary-text': '#8C8C8C',
+      'secondary-text': '#424242',
+      'light-bg': '#FBF7F4',
+      'border-main': 'rgb(79 79 79 / 31%)',
 
       // Dark mode
       'dark-bg': '#1C1C1E',
       'dark-primary': '#FFFFFF',
       'dark-secondary': '#EFEFF4',
-      'dark-heading-text': '#9B9B9B',
+      'dark-heading-text': '#C7C7C7',
       'dark-secondary-text': '#BFBFBF',
     },
   },
