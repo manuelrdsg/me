@@ -20,7 +20,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
     <Header />
-    <main className={'flex flex-col flex-1 min-h-full max-w-xl mt-12 mx-auto mb-24 py-0 px-6'}>{children}</main>
+    <main className={'flex flex-1 flex-col min-h-full w-full max-w-5xl mt-12 mx-auto mb-24 py-0 px-6'}>{children}</main>
     <Footer />
   </div>
 )

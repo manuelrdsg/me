@@ -36,7 +36,7 @@ const Post = ({postData}: { postData: Post }) => (
             // @ts-ignore
             image: Image,
           }}
-          className={'prose dark:prose-invert'}>
+          className={'prose dark:prose-invert self-center'}>
           {postData.body}
         </ReactMarkdown>
       </article>
