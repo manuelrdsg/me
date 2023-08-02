@@ -12,13 +12,13 @@ module.exports = {
       'accent-1': '#FF7A59',
       'accent-2': '#007AFF',
       'heading-text': '#2D2D2D',
-      'secondary-text': '#8C8C8C',
+      'secondary-text': '#424242',
 
       // Dark mode
       'dark-bg': '#1C1C1E',
       'dark-primary': '#FFFFFF',
       'dark-secondary': '#EFEFF4',
-      'dark-heading-text': '#9B9B9B',
+      'dark-heading-text': '#C7C7C7',
       'dark-secondary-text': '#BFBFBF',
     },
   },
