@@ -16,9 +16,6 @@ export const Footer = () => {
           </Link>
         </div>
         <div className={'flex sm:flex-row flex-col sm:space-x-3 sm:space-y-0 space-y-3 '}>
-          <Link className={'text-secondary-text no-underline'} href="https://tiles.manuelrdsg.com">
-            Tiles
-          </Link>
           <Link className={'text-secondary-text no-underline'} href="https://twitter.com/manuelrdsg">
             Twitter
           </Link>
@@ -28,7 +25,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className={'grid pb-6'}>
-        <p className={'justify-self-end text-secondary-text text-sm'}>
+        <p className={'justify-self-end text-secondary-text dark:text-dark-secondary-text text-sm'}>
           © {new Date().getFullYear()} Manuel Rodríguez-Sánchez Guerra
         </p>
       </div>
