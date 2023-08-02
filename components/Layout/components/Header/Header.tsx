@@ -42,6 +42,8 @@ export const Header = () => {
             <div>Projects</div>
           </Link>
           <button
+            id={'theme-toggle'}
+            aria-label={'theme-toggle'}
             onClick={() => (theme == 'dark' ? setTheme('light') : setTheme('dark'))}
             className={
               'flex items-center justify-center rounded-lg p-1 border border-transparent hover:border-secondary hover:dark:border-dark-secondary'
