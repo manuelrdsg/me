@@ -1,9 +1,10 @@
 import { Post } from 'models/PostModel'
 import { GetStaticProps } from 'next'
 
-import Date from 'components/Date'
 import Layout from 'components/Layout'
 import Link from 'components/Link'
+import Date from 'components/PostIndicators/Date'
+import ReadTime from 'components/PostIndicators/ReadTime'
 
 import { getSortedPostsData } from 'lib/posts'
 
@@ -22,7 +23,10 @@ const Blog = ({ allPostsData }: { allPostsData: Post[] }) => {
             </Link>
             <div className={'flex flex-col gap-1.5'}>
               <p className={'text-md text-secondary-text dark:text-dark-secondary-text'}>{metadata.subtitle}</p>
-              <Date className={'text-sm'} dateString={metadata.date} />
+              <div className={'flex flex-row gap-x-1.5'}>
+                <Date className={'text-xs'} dateString={metadata.date} />
+                {!!metadata.readingMins && <ReadTime readMins={metadata.readingMins} className={'text-xs'} />}
+              </div>
             </div>
           </li>
         ))}
