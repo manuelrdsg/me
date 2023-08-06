@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <header
       className={
-        'block sticky top-0 px-6 py-4 after:absolute after:inset-0 after:-z-50 after:border-b after:border-secondary/30 after:bg-dark-primary/80 after:dark:bg-dark-bg/80 after:backdrop-saturate-[180%] after:backdrop-blur-[20px] after:shadow-lg after:shadow-dark-primary/50 dark:after:shadow-dark-bg/50 md:after:shadow-xl md:after:shadow-dark-primary/50'
+        'block sticky top-0 px-6 py-4 after:absolute after:inset-0 after:-z-50 after:border-b after:border-secondary/30 after:bg-dark-primary/80 after:dark:bg-dark-bg/80 after:backdrop-saturate-[180%] after:backdrop-blur-[20px] after:shadow-lg after:shadow-dark-primary/50 dark:after:shadow-dark-bg/50 md:after:shadow-xl md:after:shadow-dark-primary/50 z-50'
       }>
       <div className={'flex flex-row justify-between'}>
         <div className={'flex flex-row space-x-3 space-y-0'}>
@@ -19,7 +19,7 @@ export const Header = () => {
         <div className={'flex flex-row space-x-3 space-y-0'}>
           <Link
             className={
-              'flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-2 hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold'
+              'hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-2 hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold'
             }
             href="/blog">
             <PencilIcon className={'h-4 w-4'} />
@@ -27,7 +27,7 @@ export const Header = () => {
           </Link>
           <Link
             className={
-              'flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-dotted hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold'
+              'hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-dotted hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold'
             }
             href="https://tiles.manuelrdsg.com">
             <CameraIcon className={'h-4 w-4'} />
@@ -35,7 +35,7 @@ export const Header = () => {
           </Link>
           <Link
             className={
-              'flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-double hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold'
+              'hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-double hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold'
             }
             href="https://tiles.manuelrdsg.com">
             <FolderOpenIcon className={'h-4 w-4'} />
