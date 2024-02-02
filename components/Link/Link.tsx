@@ -10,9 +10,9 @@ export const Link = ({
   children: React.ReactNode
   className?: string
 }) => (
-  <a
+  <NextLink
     href={href}
     className={`text-primary dark:text-dark-primary underline underline-offset-2 hover:border-dotted decoration-1 ${className}`}>
     {children}
-  </a>
+  </NextLink>
 )
