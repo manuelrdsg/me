@@ -2,7 +2,7 @@ import { Post } from 'models/PostModel'
 import { GetStaticProps } from 'next'
 
 import Layout from 'components/Layout'
-import Link from 'components/Link'
+import LinkButton from 'components/LinkButton'
 import Date from 'components/PostIndicators/Date'
 import ReadTime from 'components/PostIndicators/ReadTime'
 
@@ -18,9 +18,9 @@ const Blog = ({ allPostsData }: { allPostsData: Post[] }) => {
       <ul>
         {allPostsData.map(({ id, metadata }) => (
           <li className={'flex flex-col mb-6 gap-1'} key={id}>
-            <Link className={'font-bold text-xl'} href={`/blog/${id}`}>
+            <LinkButton className={'font-bold text-xl'} href={`/blog/${id}`}>
               {metadata.title}
-            </Link>
+            </LinkButton>
             <div className={'flex flex-col gap-1.5'}>
               <p className={'text-md text-secondary-text dark:text-dark-secondary-text'}>{metadata.subtitle}</p>
               <div className={'flex flex-row gap-x-1.5'}>
