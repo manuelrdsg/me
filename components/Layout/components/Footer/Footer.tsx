@@ -1,27 +1,27 @@
-import Link from 'components/Link'
+import LinkButton from 'components/LinkButton'
 
 export const Footer = () => {
   return (
     <footer className={'flex flex-col mx-auto max-w-5xl px-6 w-full space-y-2'}>
       <div className={'flex flex-row justify-between pt-6 border-t border-secondary/30'}>
         <div className={'flex sm:flex-row flex-col sm:space-x-3 sm:space-y-0 space-y-3 '}>
-          <Link className={'text-secondary-text no-underline'} href="/">
+          <LinkButton className={'text-secondary-text no-underline'} href="/">
             Home
-          </Link>
-          <Link className={'text-secondary-text no-underline'} href="/blog">
+          </LinkButton>
+          <LinkButton className={'text-secondary-text no-underline'} href="/blog">
             Blog
-          </Link>
-          <Link className={'text-secondary-text no-underline'} href="/cv">
+          </LinkButton>
+          <LinkButton className={'text-secondary-text no-underline'} href="/cv">
             CV
-          </Link>
+          </LinkButton>
         </div>
         <div className={'flex sm:flex-row flex-col sm:space-x-3 sm:space-y-0 space-y-3 '}>
-          <Link className={'text-secondary-text no-underline'} href="https://twitter.com/manuelrdsg">
+          <LinkButton className={'text-secondary-text no-underline'} href="https://twitter.com/manuelrdsg">
             Twitter
-          </Link>
-          <Link className={'text-secondary-text no-underline'} href="https://github.com/manuelrdsg">
+          </LinkButton>
+          <LinkButton className={'text-secondary-text no-underline'} href="https://github.com/manuelrdsg">
             GitHub
-          </Link>
+          </LinkButton>
         </div>
       </div>
       <div className={'grid pb-6'}>

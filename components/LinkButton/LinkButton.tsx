@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import React from 'react'
 
-export const Link = ({
+export const LinkButton = ({
   href,
   children,
   className,
@@ -10,9 +10,9 @@ export const Link = ({
   children: React.ReactNode
   className?: string
 }) => (
-  <a
+  <NextLink
     href={href}
-    className={`text-primary dark:text-dark-primary underline underline-offset-2 hover:border-dotted decoration-1 ${className}`}>
+    className={`flex w-auto flex-grow-0 text-primary dark:text-dark-primary underline underline-offset-2 decoration-1 ${className}`}>
     {children}
-  </a>
+  </NextLink>
 )
