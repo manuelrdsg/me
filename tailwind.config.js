@@ -4,7 +4,7 @@ module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      backgroundImage: (theme) => ({
+      backgroundImage: () => ({
         'dark-grain-texture': "url('/textures/less_noise2.png')",
         'light-grain-texture': "url('/textures/light_noise.png')",
       }),
