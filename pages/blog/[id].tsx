@@ -27,15 +27,17 @@ const Post = ({postData}: { postData: Post }) => (
             )}
           </div>
         </header>
-        <ReactMarkdown
-          components={{
-            code: CodeBlock,
-            // @ts-ignore
-            image: Image,
-          }}
-          className={'prose dark:prose-invert self-center'}>
-          {postData.body}
-        </ReactMarkdown>
+        <div className={'self-center'}>
+          <ReactMarkdown
+            components={{
+              code: CodeBlock,
+              // @ts-ignore
+              image: Image,
+            }}
+            className={'prose prose-sm sm:prose lg:prose-lg dark:prose-invert self-center'}>
+            {postData.body}
+          </ReactMarkdown>
+        </div>
       </article>
     </Layout>
   )
