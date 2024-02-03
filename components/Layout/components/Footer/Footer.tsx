@@ -14,7 +14,7 @@ export const Footer = () => {
           <div className={'flex flex-column justify-between max-w-lg px-8 w-full  items-center'}>
             <LinkButton
               className={
-                'flex flex-col space-y-0 justify-center items-center border-b-transparent border-b-2 hover:border-b-secondary hover:dark:border-dark-secondary text-primary xs:text-base text-xs no-underline hover:no-underline font-bold'
+                'flex flex-col space-y-0 justify-center items-center border-b-transparent border-b-2 border-dashed hover:border-b-secondary hover:dark:border-dark-secondary text-primary xs:text-base text-xs no-underline hover:no-underline font-bold'
               }
               href="/">
               <UserIcon className={'xs:h-5 xs:w-5 h-4 w-4'} />
