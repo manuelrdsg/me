@@ -8,6 +8,9 @@ module.exports = {
         'dark-grain-texture': "url('/textures/less_noise2.png')",
         'light-grain-texture': "url('/textures/light_noise.png')",
       }),
+      screens: {
+        xs: '320px',
+      },
     },
     colors: {
       transparent: 'transparent',
