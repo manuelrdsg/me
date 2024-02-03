@@ -8,7 +8,7 @@ export const Footer = () => {
       {/* Footer for small screens */}
       <footer
         className={
-          'sm:hidden sm:block sticky bottom-0 w-screen after:absolute after:inset-0 after:-z-50 after:border-t after:border-secondary/30 after:bg-dark-primary/80 after:dark:bg-dark-bg/80 after:backdrop-saturate-[180%] after:backdrop-blur-[20px] after:shadow-lg after:shadow-dark-primary/50 dark:after:shadow-dark-bg/50 md:after:shadow-xl md:after:shadow-dark-primary/50 z-50'
+          'sm:hidden sticky bottom-0 w-screen after:absolute after:inset-0 after:-z-50 after:border-t after:border-secondary/30 after:bg-dark-primary/80 after:dark:bg-dark-bg/80 after:backdrop-saturate-[180%] after:backdrop-blur-[20px] after:shadow-lg after:shadow-dark-primary/50 dark:after:shadow-dark-bg/50 md:after:shadow-xl md:after:shadow-dark-primary/50 z-50'
         }>
         <div className={'flex flex-row  justify-center max-w-3 items-center py-3'}>
           <div className={'flex flex-column justify-between max-w-lg px-8 w-full  items-center'}>
