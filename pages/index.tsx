@@ -30,12 +30,12 @@ const Home = ({ allPostsData }: { allPostsData: Post[] }) => {
           <div className="max-w-xl mx-auto md:mx-0 py-[3.5rem] h-auto md:self-center">
             <h1 className="text-5xl font-bold">Hola.</h1>
             <p>
-              I'm Manuel a <span className={'italic'}>software engineer</span>{' '}
+              I&apos;m Manuel a <span className={'italic'}>software engineer</span>{' '}
               <span className={'font-bold'}>
                 <del>living in London, Madrid</del> working remotely.{' '}
               </span>
-              I'm currently working as a Lead Mobile Engineer at <Link href={'https://www.bolster.co/'}>Bolster</Link>,
-              helping the team to create
+              I&apos;m currently working as a Lead Mobile Engineer at{' '}
+              <Link href={'https://www.bolster.co/'}>Bolster</Link>, helping the team to create
             </p>
           </div>
         </div>
