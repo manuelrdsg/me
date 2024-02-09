@@ -13,7 +13,11 @@ const Blog = ({ allPostsData }: { allPostsData: Post[] }) => {
     <Layout>
       <div className={'mb-8'}>
         <h2 className={'font-bold text-3xl md:text-5xl text-heading-text dark:text-dark-primary'}>Writing</h2>
-        <p className={'text-sm text-secondary-text dark:text-dark-primary'}>{`${allPostsData.length} posts`}</p>
+        <p className={'text-md text-secondary-text dark:text-dark-primary mt-4 max-w-xl'}>
+          {
+            'Mostly brain dumps, experiences, and thoughts. I write about things I find interesting, recommendations, cross-platform development, startups and design'
+          }
+        </p>
       </div>
       <ul>
         {allPostsData.map(({ id, metadata }) => (

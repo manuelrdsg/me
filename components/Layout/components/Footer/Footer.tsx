@@ -26,7 +26,7 @@ export const Footer = () => {
               }
               href="/blog">
               <PencilIcon className={'xs:h-5 xs:w-5 h-4 w-4'} />
-              <div>Blog</div>
+              <div>Writing</div>
             </LinkButton>
             <LinkButton
               className={
@@ -55,12 +55,9 @@ export const Footer = () => {
               Home
             </LinkButton>
             <LinkButton className={'text-secondary-text no-underline'} href="/blog">
-              Blog
+              Writing
             </LinkButton>
-            <LinkButton className={'text-secondary-text no-underline'} href="/cv">
-              CV
-            </LinkButton>
-            <LinkButton className={'text-secondary-text no-underline'} href="/cv">
+            <LinkButton className={'text-secondary-text no-underline'} href="/uses">
               Uses
             </LinkButton>
           </div>

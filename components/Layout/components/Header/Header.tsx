@@ -32,7 +32,7 @@ export const Header = () => {
             }
             href="/blog">
             <PencilIcon className={'h-4 w-4'} />
-            <div>Blog</div>
+            <div>Writing</div>
           </LinkButton>
           <LinkButton
             className={
