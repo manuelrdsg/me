@@ -39,11 +39,8 @@ const Home = ({ allPostsData }: { allPostsData: Post[] }) => {
               </span>
               I&apos;m currently working as a Lead Mobile Engineer at{' '}
               <Link href={'https://www.bolster.co/'}>Bolster</Link>, helping the team to shape beautiful and functional
-              products.{' '}
-              <p className={'mt-2'}>
-                I absolutely love collecting and listening to music, and I’m always carrying a film camera with me to
-                snap some pictures.
-              </p>
+              products. <br /> <br />I absolutely love collecting and listening to music, and I’m always carrying a film
+              camera with me to snap some pictures.
             </p>
           </div>
         </div>
