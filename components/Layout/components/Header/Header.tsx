@@ -10,8 +10,8 @@ export const Header = () => {
   const theme = currentTheme === 'system' ? systemTheme : currentTheme
 
   const themeButtonLookup: Record<string, ReactNode> = {
-    light: <SunIcon className={'h-4 w-4'} />,
-    dark: <MoonIcon className={'h-4 w-4'} />,
+    light: <SunIcon className={'h-5 w-5'} />,
+    dark: <MoonIcon className={'h-5 w-5'} />,
   }
 
   return (
@@ -31,7 +31,7 @@ export const Header = () => {
               'hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-2 hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold'
             }
             href="/blog">
-            <PencilIcon className={'h-4 w-4'} />
+            <PencilIcon className={'h-5 w-5'} />
             <div>Scribbles</div>
           </LinkButton>
           <LinkButton
@@ -39,7 +39,7 @@ export const Header = () => {
               'hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-dotted hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold'
             }
             href="https://tiles.manuelrdsg.com">
-            <CameraIcon className={'h-4 w-4'} />
+            <CameraIcon className={'h-5 w-5'} />
             <div>Tiles</div>
           </LinkButton>
           <LinkButton
@@ -47,7 +47,7 @@ export const Header = () => {
               'hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-double hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold'
             }
             href="https://tiles.manuelrdsg.com">
-            <FolderOpenIcon className={'h-4 w-4'} />
+            <FolderOpenIcon className={'h-5 w-5'} />
             <div>Projects</div>
           </LinkButton>
           <button

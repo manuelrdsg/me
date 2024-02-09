@@ -11,10 +11,10 @@ export const Footer = () => {
           'sm:hidden bg-transparent sticky bottom-0 w-screen after:absolute after:inset-0 after:-z-50 after:border-t after:border-secondary/30 after:bg-dark-primary/80 after:dark:bg-dark-bg/80 after:backdrop-saturate-[180%] after:backdrop-blur-[20px] after:shadow-lg after:shadow-dark-primary/50 dark:after:shadow-dark-bg/50 md:after:shadow-xl md:after:shadow-dark-primary/50 z-50'
         }>
         <div className={'flex flex-row  justify-center max-w-3 items-center py-3'}>
-          <div className={'flex flex-column justify-between max-w-lg px-8 w-full  items-center'}>
+          <div className={'flex flex-column justify-between max-w-md px-8 w-full  items-center'}>
             <LinkButton
               className={
-                'flex flex-col space-y-0 justify-center items-center border-b-transparent border-b-2 border-dashed hover:border-b-secondary hover:dark:border-dark-secondary text-primary xs:text-base text-xs no-underline hover:no-underline font-bold'
+                'flex flex-col space-y-1 justify-center items-center border-b-transparent border-b-2 border-dashed hover:border-b-secondary hover:dark:border-dark-secondary text-primary  text-xs no-underline hover:no-underline'
               }
               href="/">
               <UserIcon className={'xs:h-5 xs:w-5 h-4 w-4'} />
@@ -22,7 +22,7 @@ export const Footer = () => {
             </LinkButton>
             <LinkButton
               className={
-                'flex flex-col space-y-0 justify-center items-center border-b-transparent border-b-2 hover:border-b-secondary hover:dark:border-dark-secondary text-primary xs:text-base text-xs no-underline hover:no-underline font-bold'
+                'flex flex-col space-y-1 justify-center items-center border-b-transparent border-b-2 hover:border-b-secondary hover:dark:border-dark-secondary text-primary text-xs no-underline hover:no-underline'
               }
               href="/blog">
               <PencilIcon className={'xs:h-5 xs:w-5 h-4 w-4'} />
@@ -30,7 +30,7 @@ export const Footer = () => {
             </LinkButton>
             <LinkButton
               className={
-                'flex flex-col space-y-0 justify-center items-center border-b-transparent border-b-4 border-dotted hover:border-b-secondary hover:dark:border-dark-secondary text-primary xs:text-base text-xs no-underline hover:no-underline font-bold'
+                'flex flex-col space-y-1 justify-center items-center border-b-transparent border-b-4 border-dotted hover:border-b-secondary hover:dark:border-dark-secondary text-primary  text-xs no-underline hover:no-underline '
               }
               href="https://tiles.manuelrdsg.com">
               <CameraIcon className={'xs:h-5 xs:w-5 h-4 w-4'} />
@@ -38,7 +38,7 @@ export const Footer = () => {
             </LinkButton>
             <LinkButton
               className={
-                'flex flex-col space-y-0 justify-center items-center border-b-transparent border-b-4 border-double hover:border-b-secondary hover:dark:border-dark-secondary text-primary xs:text-base text-xs  no-underline hover:no-underline font-bold'
+                'flex flex-col space-y-1 justify-center items-center border-b-transparent border-b-4 border-double hover:border-b-secondary hover:dark:border-dark-secondary text-primary  text-xs  no-underline hover:no-underline'
               }
               href="https://tiles.manuelrdsg.com">
               <FolderOpenIcon className={'xs:h-5 xs:w-5 h-4 w-4'} />
