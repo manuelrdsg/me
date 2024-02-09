@@ -6,7 +6,10 @@ export const CodeBlock = ({ node, inline, className, children, ...props }: any) 
   return !inline && match ? (
     <SyntaxHighlighter
       style={nord}
-      customStyle={{ borderRadius: '0.2rem' }}
+      customStyle={{
+        borderRadius: '0.2rem',
+        backgroundColor: 'transparent',
+      }}
       language={match[1]}
       PreTag="div"
       {...props}>

@@ -38,7 +38,8 @@ export const Header = () => {
             className={
               'hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-dotted hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold'
             }
-            href="https://tiles.manuelrdsg.com">
+            href="https://tiles.manuelrdsg.com"
+            newTab>
             <CameraIcon className={'h-5 w-5'} />
             <div>Tiles</div>
           </LinkButton>
