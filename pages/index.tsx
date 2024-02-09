@@ -11,7 +11,6 @@ import { getSortedPostsData } from 'lib/posts'
 const profPic = require('public/images/profile.jpeg')
 
 const shrikhand = Shrikhand({ weight: '400', subsets: ['latin'] })
-// const metal = Metal({ weight: '400', subsets: ['latin'] })
 
 const Home = ({ allPostsData }: { allPostsData: Post[] }) => {
   return (
