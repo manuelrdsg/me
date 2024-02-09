@@ -1,10 +1,19 @@
 import { CameraIcon, FolderOpenIcon, MoonIcon, PencilIcon, SunIcon } from '@heroicons/react/24/outline'
 import { useTheme } from 'next-themes'
+import { ReactNode } from 'react'
 
 import LinkButton from 'components/LinkButton'
 
 export const Header = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme: currentTheme = 'system', setTheme, systemTheme = 'light' } = useTheme()
+
+  const theme = currentTheme === 'system' ? systemTheme : currentTheme
+
+  const themeButtonLookup: Record<string, ReactNode> = {
+    light: <SunIcon className={'h-4 w-4'} />,
+    dark: <MoonIcon className={'h-4 w-4'} />,
+  }
+
   return (
     <header
       className={
@@ -48,7 +57,7 @@ export const Header = () => {
             className={
               'flex items-center justify-center rounded-lg p-1 border border-transparent hover:border-secondary hover:dark:border-dark-secondary'
             }>
-            {theme === 'light' ? <SunIcon className={'h-4 w-4'} /> : <MoonIcon className={'h-4 w-4'} />}
+            {themeButtonLookup[theme]}
           </button>
         </div>
       </div>
