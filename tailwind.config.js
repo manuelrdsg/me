@@ -21,6 +21,7 @@ module.exports = {
       'accent-2': '#007AFF',
       'heading-text': '#2D2D2D',
       'secondary-text': '#424242',
+      'light-bg': '#FBF7F4',
 
       // Dark mode
       'dark-bg': '#1C1C1E',

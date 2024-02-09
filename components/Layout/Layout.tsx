@@ -7,7 +7,9 @@ import Header from './components/Header'
 
 export const Layout = ({ children }: { children: React.ReactNode }) => (
   <div
-    className={'flex flex-1 flex-col dark:bg-dark-bg dark:bg-dark-grain-texture min-h-full items-stretch flex-nowrap'}>
+    className={
+      'flex flex-1 flex-col bg-light-bg dark:bg-dark-bg dark:bg-dark-grain-texture min-h-full items-stretch flex-nowrap'
+    }>
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <meta name="description" content="Learn how to build a personal website using Next.js" />

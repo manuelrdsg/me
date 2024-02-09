@@ -8,7 +8,7 @@ export const Footer = () => {
       {/* Footer for small screens */}
       <footer
         className={
-          'sm:hidden sticky bottom-0 w-screen after:absolute after:inset-0 after:-z-50 after:border-t after:border-secondary/30 after:bg-dark-primary/80 after:dark:bg-dark-bg/80 after:backdrop-saturate-[180%] after:backdrop-blur-[20px] after:shadow-lg after:shadow-dark-primary/50 dark:after:shadow-dark-bg/50 md:after:shadow-xl md:after:shadow-dark-primary/50 z-50'
+          'sm:hidden bg-transparent sticky bottom-0 w-screen after:absolute after:inset-0 after:-z-50 after:border-t after:border-secondary/30 after:bg-dark-primary/80 after:dark:bg-dark-bg/80 after:backdrop-saturate-[180%] after:backdrop-blur-[20px] after:shadow-lg after:shadow-dark-primary/50 dark:after:shadow-dark-bg/50 md:after:shadow-xl md:after:shadow-dark-primary/50 z-50'
         }>
         <div className={'flex flex-row  justify-center max-w-3 items-center py-3'}>
           <div className={'flex flex-column justify-between max-w-lg px-8 w-full  items-center'}>
@@ -48,8 +48,8 @@ export const Footer = () => {
         </div>
       </footer>
       {/* Footer for larger screens */}
-      <footer className={'hidden sm:flex flex-col mx-auto max-w-5xl px-6 w-full space-y-2'}>
-        <div className={'flex flex-row justify-between pt-6 border-t border-secondary/30'}>
+      <footer className={'hidden sm:flex flex-col mx-auto w-full space-y-2'}>
+        <div className={'flex flex-row justify-between pt-6 border-t border-secondary/30 px-6'}>
           <div className={'flex sm:flex-row flex-col sm:space-x-3 sm:space-y-0 space-y-3 '}>
             <LinkButton className={'text-secondary-text no-underline'} href="/">
               Home
@@ -73,7 +73,7 @@ export const Footer = () => {
             </LinkButton>
           </div>
         </div>
-        <div className={'grid pb-6'}>
+        <div className={'grid pb-6 px-6'}>
           <p className={'justify-self-end text-secondary-text dark:text-dark-secondary-text text-sm'}>
             © {new Date().getFullYear()} Manuel Rodríguez-Sánchez Guerra
           </p>
