@@ -1,9 +1,10 @@
 import fs from 'fs'
 import matter from 'gray-matter'
-import { Post, PostMetadata } from 'models/PostModel'
 import path from 'path'
 
-const postsDirectory = path.join(process.cwd(), 'content/blog')
+import { Post, PostMetadata } from 'models/PostModel'
+
+const postsDirectory = path.join(process.cwd(), 'src/content/blog')
 
 export function getSortedPostsData() {
   // Get file names under /posts

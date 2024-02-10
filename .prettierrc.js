@@ -10,11 +10,12 @@ module.exports = {
   arrowParens: 'always',
   importOrder: [
     '<THIRD_PARTY_MODULES>',
-    '^components/(.*)$',
     '^content/(.*)$',
     '^lib/(.*)$',
     '^hooks/(.*)$',
+    '^components/(.*)$',
     '^pages/(.*)$',
+    '^models/(.*)$',
     '^styles/(.*)$',
     '^utils/(.*)$',
     '^[./]',
