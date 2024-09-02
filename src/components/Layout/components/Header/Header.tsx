@@ -1,4 +1,4 @@
-import { CameraIcon, FolderOpenIcon, MoonIcon, PencilIcon, SunIcon } from '@heroicons/react/24/outline'
+import { CameraIcon, MoonIcon, PencilIcon, SunIcon } from '@heroicons/react/24/outline'
 import { useTheme } from 'next-themes'
 import { Playfair_Display } from 'next/font/google'
 import { ReactNode } from 'react'
@@ -42,12 +42,13 @@ export const Header = () => {
             <CameraIcon className={'h-5 w-5'} />
             <div>Tiles</div>
           </LinkButton>
-          <LinkButton
-            className={`${playfair.className} hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-double hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold`}
-            href="https://tiles.manuelrdsg.com">
-            <FolderOpenIcon className={'h-5 w-5'} />
-            <div>Projects</div>
-          </LinkButton>
+          {/*TODO: Restore when Projects page is added #15*/}
+          {/*<LinkButton*/}
+          {/*  className={`${playfair.className} hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-double hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold`}*/}
+          {/*  href="https://tiles.manuelrdsg.com">*/}
+          {/*  <FolderOpenIcon className={'h-5 w-5'} />*/}
+          {/*  <div>Projects</div>*/}
+          {/*</LinkButton>*/}
           <button
             id={'theme-toggle'}
             aria-label={'theme-toggle'}
