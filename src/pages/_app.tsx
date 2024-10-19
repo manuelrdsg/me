@@ -5,7 +5,7 @@ import 'styles/global.css'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system">
+    <ThemeProvider attribute="class">
       <Component {...pageProps} />
     </ThemeProvider>
   )

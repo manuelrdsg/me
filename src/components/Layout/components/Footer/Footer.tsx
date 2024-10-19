@@ -1,9 +1,9 @@
 import { CameraIcon, PencilIcon, UserIcon } from '@heroicons/react/24/outline'
-import { Playfair_Display } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
 import LinkButton from 'components/LinkButton'
 
-const playfair = Playfair_Display({ weight: ['500'], subsets: ['latin'] })
+const inter = Inter({ weight: '400', subsets: ['latin'] })
 
 export const Footer = () => {
   return (
@@ -51,7 +51,7 @@ export const Footer = () => {
               }
               href="/">
               <UserIcon className={'xs:h-5 xs:w-5 h-4 w-4'} />
-              <div className={`${playfair.className} pt-1`}>Me</div>
+              <div className={`${inter.className} pt-1`}>Me</div>
             </LinkButton>
             <LinkButton
               className={
@@ -59,7 +59,7 @@ export const Footer = () => {
               }
               href="/blog">
               <PencilIcon className={'xs:h-5 xs:w-5 h-4 w-4'} />
-              <div className={`${playfair.className} pt-1`}>Scribbles</div>
+              <div className={`${inter.className} pt-1`}>Scribbles</div>
             </LinkButton>
             <LinkButton
               className={
@@ -67,7 +67,7 @@ export const Footer = () => {
               }
               href="https://tiles.manuelrdsg.com">
               <CameraIcon className={'xs:h-5 xs:w-5 h-4 w-4'} />
-              <div className={`${playfair.className} pt-1`}>Tiles</div>
+              <div className={`${inter.className} pt-1`}>Tiles</div>
             </LinkButton>
             {/*TODO: Restore when Projects page is added #15*/}
             {/*<LinkButton*/}

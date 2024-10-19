@@ -5,16 +5,22 @@ import { ReactNode } from 'react'
 
 import LinkButton from 'components/LinkButton'
 
+const DEFAULT_THEME = 'dark'
+
 const playfair = Playfair_Display({ weight: ['500'], subsets: ['latin'] })
 
 export const Header = () => {
-  const { theme: currentTheme = 'system', setTheme, systemTheme = 'light' } = useTheme()
-
-  const theme = currentTheme === 'system' ? systemTheme : currentTheme
+  const { theme, setTheme } = useTheme()
+  const currentTheme = theme !== undefined ? theme : DEFAULT_THEME
 
   const themeButtonLookup: Record<string, ReactNode> = {
     light: <SunIcon className={'h-5 w-5'} />,
     dark: <MoonIcon className={'h-5 w-5'} />,
+  }
+
+  const onChangeTheme = () => {
+    if (currentTheme === 'dark') setTheme('light')
+    else setTheme('dark')
   }
 
   return (
@@ -52,11 +58,11 @@ export const Header = () => {
           <button
             id={'theme-toggle'}
             aria-label={'theme-toggle'}
-            onClick={() => (theme == 'dark' ? setTheme('light') : setTheme('dark'))}
+            onClick={onChangeTheme}
             className={
               'flex items-center justify-center rounded-lg p-1 border border-transparent hover:border-secondary hover:dark:border-dark-secondary'
             }>
-            {themeButtonLookup[theme]}
+            {themeButtonLookup[currentTheme]}
           </button>
         </div>
       </div>
