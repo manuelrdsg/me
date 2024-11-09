@@ -1,20 +1,32 @@
 import { CameraIcon, MoonIcon, PencilIcon, SunIcon } from '@heroicons/react/24/outline'
+import { useTypography } from 'context/Typography.context'
 import { useTheme } from 'next-themes'
-import { Playfair_Display } from 'next/font/google'
 import { ReactNode } from 'react'
 
 import LinkButton from 'components/LinkButton'
 
-const playfair = Playfair_Display({ weight: ['500'], subsets: ['latin'] })
+import { FONTS, FontValues } from 'styles/fonts'
+
+const DEFAULT_THEME = 'dark'
 
 export const Header = () => {
-  const { theme: currentTheme = 'system', setTheme, systemTheme = 'light' } = useTheme()
-
-  const theme = currentTheme === 'system' ? systemTheme : currentTheme
+  const { theme, setTheme } = useTheme()
+  const { font, changeFont } = useTypography()
+  const currentTheme = theme !== undefined ? theme : DEFAULT_THEME
 
   const themeButtonLookup: Record<string, ReactNode> = {
     light: <SunIcon className={'h-5 w-5'} />,
     dark: <MoonIcon className={'h-5 w-5'} />,
+  }
+
+  const onChangeTheme = () => {
+    if (currentTheme === 'dark') setTheme('light')
+    else setTheme('dark')
+  }
+
+  const onChangeFont = () => {
+    if (font.name === FontValues.inter) changeFont(FontValues.jetbrains)
+    else changeFont(FontValues.inter)
   }
 
   return (
@@ -24,19 +36,21 @@ export const Header = () => {
       }>
       <div className={'flex flex-row justify-between'}>
         <div className={'flex flex-row space-x-3 space-y-0'}>
-          <LinkButton className={`${playfair.className} text-xl text-heading-text font-bold no-underline`} href="/">
+          <LinkButton
+            className={`${FONTS[FontValues.playfair].className} text-xl text-heading-text font-bold no-underline`}
+            href="/">
             Manuel Rguez-Sanchez
           </LinkButton>
         </div>
         <div className={'flex flex-row space-x-3 space-y-0'}>
           <LinkButton
-            className={`${playfair.className} hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-2 hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold`}
+            className={`${FONTS[FontValues.playfair].className} hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-2 hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline`}
             href="/blog">
             <PencilIcon className={'h-5 w-5'} />
             <div>Scribbles</div>
           </LinkButton>
           <LinkButton
-            className={`${playfair.className} hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-dotted hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold`}
+            className={`${FONTS[FontValues.playfair].className} hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-dotted hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline`}
             href="https://tiles.manuelrdsg.com"
             newTab>
             <CameraIcon className={'h-5 w-5'} />
@@ -52,11 +66,23 @@ export const Header = () => {
           <button
             id={'theme-toggle'}
             aria-label={'theme-toggle'}
-            onClick={() => (theme == 'dark' ? setTheme('light') : setTheme('dark'))}
+            onClick={onChangeTheme}
             className={
               'flex items-center justify-center rounded-lg p-1 border border-transparent hover:border-secondary hover:dark:border-dark-secondary'
             }>
-            {themeButtonLookup[theme]}
+            {themeButtonLookup[currentTheme]}
+          </button>
+          <button
+            id={'font-toggle'}
+            aria-label={'font-toggle'}
+            onClick={onChangeFont}
+            className={
+              'flex items-center justify-center rounded-lg p-1 border border-transparent hover:border-secondary hover:dark:border-dark-secondary'
+            }>
+            <div
+              className={`${font.value.className} h-5 w-5 items-center justify-center text-md text-center leading-normal`}>
+              Aa
+            </div>
           </button>
         </div>
       </div>

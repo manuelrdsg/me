@@ -1,15 +1,15 @@
-import { Inter, Shrikhand } from 'next/font/google'
+import { useTypography } from 'context'
 
 import Link from 'components/Link'
 
-const shrikhand = Shrikhand({ weight: '400', subsets: ['latin'] })
-const inter = Inter({ weight: ['400', '700'], subsets: ['latin'] })
+import { FONTS, FontValues } from 'styles/fonts'
 
 const SelfDescription = () => {
+  const { font } = useTypography()
   return (
     <>
-      <h1 className={`${shrikhand.className} text-4xl`}>hola.</h1>
-      <p className={`${inter.className}`}>
+      <h1 className={`${FONTS[FontValues.shrikhand].className} text-4xl`}>hola.</h1>
+      <p className={`${font.value.className}`}>
         I&apos;m Manuel, a <span className={'italic'}>software engineer with a love for design</span>{' '}
         <span className={'font-bold'}>
           <del>living in Cádiz, Madrid</del> working from London.{' '}
