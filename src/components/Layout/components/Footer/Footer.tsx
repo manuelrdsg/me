@@ -23,8 +23,8 @@ export const Footer = () => {
             {/*</LinkButton>*/}
           </div>
           <div className={'flex sm:flex-row flex-col sm:space-x-3 sm:space-y-0 space-y-3 '}>
-            <LinkButton className={'text-secondary-text no-underline'} href="https://twitter.com/manuelrdsg">
-              Twitter
+            <LinkButton className={'text-secondary-text no-underline'} href="https://bsky.app/profile/manuelrdsg.com">
+              Bluesky
             </LinkButton>
             <LinkButton className={'text-secondary-text no-underline'} href="https://github.com/manuelrdsg">
               GitHub
