@@ -1,3 +1,4 @@
+import { TypographyProvider } from 'context'
 import { ThemeProvider } from 'next-themes'
 import { AppProps } from 'next/app'
 
@@ -6,7 +7,9 @@ import 'styles/global.css'
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider attribute="class">
-      <Component {...pageProps} />
+      <TypographyProvider>
+        <Component {...pageProps} />
+      </TypographyProvider>
     </ThemeProvider>
   )
 }
