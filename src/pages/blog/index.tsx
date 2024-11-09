@@ -1,17 +1,20 @@
-import { Post } from 'models/PostModel'
+import { useTypography } from 'context'
 import { GetStaticProps } from 'next'
+
+import { getSortedPostsData } from 'lib/posts'
 
 import Layout from 'components/Layout'
 import LinkButton from 'components/LinkButton'
 import Date from 'components/PostIndicators/Date'
 import ReadTime from 'components/PostIndicators/ReadTime'
 
-import { getSortedPostsData } from 'lib/posts'
+import { Post } from 'models/PostModel'
 
 const Blog = ({ allPostsData }: { allPostsData: Post[] }) => {
+  const { font } = useTypography()
   return (
     <Layout>
-      <div className={'mb-8'}>
+      <div className={`${font.value.className} mb-8`}>
         <h2 className={'font-bold text-3xl md:text-5xl text-heading-text dark:text-dark-primary'}>Scribbles</h2>
         <p className={'text-md text-secondary-text dark:text-dark-primary mt-4 max-w-xl'}>
           {
@@ -21,7 +24,7 @@ const Blog = ({ allPostsData }: { allPostsData: Post[] }) => {
       </div>
       <ul>
         {allPostsData.map(({ id, metadata }) => (
-          <li className={'flex flex-col mb-6 gap-1'} key={id}>
+          <li className={`${font.value.className} flex flex-col mb-6 gap-1`} key={id}>
             <LinkButton className={'font-bold text-xl'} href={`/blog/${id}`}>
               {metadata.title}
             </LinkButton>
