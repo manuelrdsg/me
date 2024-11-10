@@ -1,6 +1,5 @@
 import Image from 'next/image'
-
-const profPic = require('public/images/profile.jpeg')
+import ProfilePicture from 'public/images/profile.webp'
 
 const ProfileImage = () => {
   return (
@@ -10,8 +9,8 @@ const ProfileImage = () => {
           priority
           className="h-full w-full object-cover text-transparent opacity-100 scale-150 grayscale-0 brightness-100 dark:grayscale-15 dark:brightness-90"
           fill
-          src={profPic}
-          alt="profPic"
+          src={ProfilePicture}
+          alt="Profile picture"
           style={{ objectPosition: 'center 30%' }}
         />
       </div>
