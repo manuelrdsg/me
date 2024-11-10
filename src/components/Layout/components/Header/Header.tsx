@@ -6,22 +6,26 @@ import { ReactNode } from 'react'
 import LinkButton from 'components/LinkButton'
 
 import { FONTS, FontValues } from 'styles/fonts'
+import { DEFAULT_THEME, Themes } from 'styles/theme'
 
-const DEFAULT_THEME = 'dark'
+const themeButtonLookup: Record<string, ReactNode> = {
+  [Themes.LIGHT]: <SunIcon className={'h-5 w-5'} />,
+  [Themes.DARK]: <MoonIcon className={'h-5 w-5'} />,
+}
+
+const getCurrentTheme = (theme?: string) => {
+  if (!theme || !Object.values(Themes).includes(theme as Themes)) return DEFAULT_THEME
+  return theme
+}
 
 export const Header = () => {
   const { theme, setTheme } = useTheme()
   const { font, changeFont } = useTypography()
-  const currentTheme = theme !== undefined ? theme : DEFAULT_THEME
-
-  const themeButtonLookup: Record<string, ReactNode> = {
-    light: <SunIcon className={'h-5 w-5'} />,
-    dark: <MoonIcon className={'h-5 w-5'} />,
-  }
+  const currentTheme = getCurrentTheme(theme)
 
   const onChangeTheme = () => {
-    if (currentTheme === 'dark') setTheme('light')
-    else setTheme('dark')
+    if (currentTheme === Themes.DARK) setTheme(Themes.LIGHT)
+    else setTheme(Themes.DARK)
   }
 
   const onChangeFont = () => {
@@ -37,7 +41,7 @@ export const Header = () => {
       <div className={'flex flex-row justify-between'}>
         <div className={'flex flex-row space-x-3 space-y-0'}>
           <LinkButton
-            className={`${FONTS[FontValues.playfair].className} text-xl text-heading-text font-bold no-underline`}
+            className={`${FONTS[FontValues.playfair].className} text-xl text-heading-text no-underline`}
             href="/">
             Manuel Rguez-Sanchez
           </LinkButton>
@@ -56,13 +60,6 @@ export const Header = () => {
             <CameraIcon className={'h-5 w-5'} />
             <div>Tiles</div>
           </LinkButton>
-          {/*TODO: Restore when Projects page is added #15*/}
-          {/*<LinkButton*/}
-          {/*  className={`${playfair.className} hidden sm:flex flex-row space-x-1.5 space-y-0 justify-center items-center border-b-transparent border-b-4 border-double hover:border-b-secondary hover:dark:border-dark-secondary text-primary no-underline hover:no-underline font-bold`}*/}
-          {/*  href="https://tiles.manuelrdsg.com">*/}
-          {/*  <FolderOpenIcon className={'h-5 w-5'} />*/}
-          {/*  <div>Projects</div>*/}
-          {/*</LinkButton>*/}
           <button
             id={'theme-toggle'}
             aria-label={'theme-toggle'}

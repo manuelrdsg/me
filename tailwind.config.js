@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: () => ({
-        'dark-grain-texture': "url('/textures/less_noise2.png')",
-        'light-grain-texture': "url('/textures/light_noise.png')",
+        'dark-grain-texture': "url('/textures/less_noise2.webp')",
+        'light-grain-texture': "url('/textures/light_noise.webp')",
       }),
       screens: {
         xs: '320px',
