@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import ProfilePicture from 'public/images/profile.webp'
 
 const ProfileImage = () => {
   return (
@@ -9,7 +8,7 @@ const ProfileImage = () => {
           priority
           className="h-full w-full object-cover text-transparent opacity-100 scale-150 grayscale-0 brightness-100 dark:grayscale-15 dark:brightness-90"
           fill
-          src={ProfilePicture}
+          src={'https://res.cloudinary.com/manuelrdsg/image/upload/v1731512007/Portfolio/profile.webp'}
           alt="Profile picture"
           style={{ objectPosition: 'center 30%' }}
         />
