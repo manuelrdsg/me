@@ -1,10 +1,30 @@
 import { NextFont } from 'next/dist/compiled/@next/font'
 import { Inter, JetBrains_Mono, Playfair_Display, Shrikhand } from 'next/font/google'
 
-const inter = Inter({ weight: ['400', '500', '700'], subsets: ['latin'] })
-const jetbrains = JetBrains_Mono({ weight: ['400'], subsets: ['latin'] })
-const playfair = Playfair_Display({ weight: ['400'], subsets: ['latin'] })
-const shrikhand = Shrikhand({ weight: '400', subsets: ['latin'] })
+const inter = Inter({ 
+  weight: ['400', '500', '700'], 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: false,
+})
+const jetbrains = JetBrains_Mono({ 
+  weight: ['400'], 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true, // Default font, preload it
+})
+const playfair = Playfair_Display({ 
+  weight: ['400'], 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: false,
+})
+const shrikhand = Shrikhand({ 
+  weight: '400', 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true, // Used in "hola." heading, preload it
+})
 
 export enum FontValues {
   inter = 'inter',
