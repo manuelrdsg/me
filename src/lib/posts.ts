@@ -47,8 +47,28 @@ export function getAllPostIds() {
   })
 }
 
+function validatePostId(id: string): boolean {
+  return /^[a-zA-Z0-9_-]+$/.test(id) && !id.includes('..') && !path.isAbsolute(id)
+}
+
 export async function getPostData(id: string): Promise<Post> {
+  if (!validatePostId(id)) {
+    throw new Error('Invalid post ID')
+  }
+
   const fullPath = path.join(postsDirectory, `${id}.md`)
+  const resolvedPath = path.resolve(fullPath)
+  const resolvedPostsDir = path.resolve(postsDirectory)
+  
+  if (!resolvedPath.startsWith(resolvedPostsDir)) {
+    throw new Error('Invalid post path')
+  }
+
+  // Check if file exists before reading
+  if (!fs.existsSync(fullPath)) {
+    throw new Error('Post not found')
+  }
+
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata section
