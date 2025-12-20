@@ -33,14 +33,15 @@ const Post = ({ postData }: { postData: Post }) => {
             {!!postData.metadata.location && <Location location={postData.metadata.location} />}
           </div>
         </header>
-        <div className={'self-center max-w-full'}>
+        <div className={`${font.value.className} prose prose-sm sm:prose lg:prose-lg dark:prose-invert self-center max-w-full`}>
           <ReactMarkdown
             components={{
               code: CodeBlock,
               // @ts-ignore
               image: Image,
             }}
-            className={`${font.value.className} prose prose-sm sm:prose lg:prose-lg dark:prose-invert self-center max-w-full`}>
+            disallowedElements={['script', 'iframe', 'object', 'embed']}
+            unwrapDisallowed={true}>
             {postData.body}
           </ReactMarkdown>
         </div>
@@ -58,12 +59,27 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params?.id as string)
+  const id = params?.id as string
 
-  return {
-    props: {
-      postData,
-    },
+  // Validate ID exists and is a string
+  if (!id || typeof id !== 'string') {
+    return {
+      notFound: true,
+    }
+  }
+
+  try {
+    const postData = await getPostData(id)
+    return {
+      props: {
+        postData,
+      },
+    }
+  } catch (error) {
+    // If post doesn't exist or is invalid, return 404
+    return {
+      notFound: true,
+    }
   }
 }
 
