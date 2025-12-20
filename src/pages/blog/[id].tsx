@@ -33,14 +33,13 @@ const Post = ({ postData }: { postData: Post }) => {
             {!!postData.metadata.location && <Location location={postData.metadata.location} />}
           </div>
         </header>
-        <div className={'self-center max-w-full'}>
+        <div className={`${font.value.className} prose prose-sm sm:prose lg:prose-lg dark:prose-invert self-center max-w-full`}>
           <ReactMarkdown
             components={{
               code: CodeBlock,
               // @ts-ignore
               image: Image,
-            }}
-            className={`${font.value.className} prose prose-sm sm:prose lg:prose-lg dark:prose-invert self-center max-w-full`}>
+            }}>
             {postData.body}
           </ReactMarkdown>
         </div>
